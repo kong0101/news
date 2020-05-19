@@ -1,0 +1,25 @@
+import re
+
+#第一题
+str = '477,32,47,16,71,42,260,567,317,14,55,80,30,59,231,40,40,438,537,54,' \
+      '775,67,61,178'
+ls = re.findall(r'\d{3}', str)
+print(ls)
+m = re.findall(r'(?<=,)\d{2}(?=,)', str)
+print('两位数的个数为：', len(m))
+
+
+
+# 第二题
+s = 'lt was this sense of freedom the first innovation entrusted' \
+    ' by the west life to theIndividualism.On the other hand,American ' \
+    'pioneers lost their comfortable life when they ' \
+    'were trying to break away from the fetters of the ' \
+    'old social order caused by the civilized society.' \
+    'Hence,they had.to live by themselves with their ' \
+    'independent spirit of pioneering'
+c2 = s.count('the ')
+print('the的个数为：', c2)
+l = re.findall(r'\b[^t\s.,?!]\w+', s)
+print(l)
+print('首字母不为t的单词个数为：', len(l))
